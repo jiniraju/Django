@@ -78,6 +78,9 @@ def delete_student(request,pk):
     students=studentDetails.objects.get(id=pk)
     students.delete()
     return redirect('show_students')
+
+def load_index_page(request,pk):
+    return render(request,'index.html')
     
 
 
