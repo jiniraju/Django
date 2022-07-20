@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+    
+<style>
+   
+    h1{
+        color: brown;
+    }
+    table{
+        background-color: lightgreen;
+    }
+   
+    
+    
+    
+</style>
+</head>
+<body>
+    <center>
+    <h1>Show Student Deatils</h1>
+    
+    <table border="2px">
+        <thead>
+            <tr>
+                
+                <th>STUDENT NAME</th>
+                <th>Email_ID</th>
+                <th>QUALIFICATION</th>
+                <th>ACTION..</th>
+            </tr>
+        </thead>
+         
+        <tbody>
+            {% for s in student %}
+            <tr>
+            
+                <td><a class="h5 text-primary"href="{% url 'show' s.id %}">{{ s.student_name }}</a></td>
+                <td>{{ s.email }}</td>
+                <td>{{ s.qualification }}</td>
+                
+                
+
+                <td><a href="{% url 'editpage' s.id  %}">Edit</a>
+                    <br>
+                    <a href="{% url 'deletepage' s.id  %}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}                    
+        </tbody>
+    </table>
+    </center>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>addstudent</title>
+
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/vs.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <style>
+    
+    #header{background-color: black;
+    width: 1380px;
+    height: 100px;}
+    body{
+      background-color: blueviolet;
+    }
+  </style>
+</head>
+<body>
+    <div id="header">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container-fluid">
+          </div>
+        </nav>
+    </div>
+    <center><h1 style="margin-top: -50px;color:blanchedalmond;">
+        <span style="color:blueviolet"></span>Add Student Details</h1></center>
+        
+    
+        <center>    
+    <form method="post" action="{% url 'add_student_details' %}"><br>
+       
+        {% csrf_token %}
+
+
+       
+        <label> Student Name:</label><br>
+        <input type="text" name="student_name" style="height:25px;width:15%;
+        text-align: center;border-color:blueviolet;cursor : pointer;"><br>
+        <label>Address:</label><br>
+        <input type="text" name="address" style="height:25px;width:15%;
+        text-align: center;border-color:blueviolet;cursor : pointer;"><br>
+        <label>Age:</label><br>
+        <input type="number" name="age" style="height:25px;width:15%;
+        text-align: center;border-color:blueviolet;cursor : pointer;"><br>
+        <label> Joining_Date:</label><br>
+        <input type="date" name="joining_date" style="height:25px;width:15%;
+        text-align: center;border-color:blueviolet;cursor : pointer;"><br>
+        <label>Email ID</label><br>
+        <input type="email" name="email" style="height:25px;width:15%;
+        text-align: center;border-color:blueviolet;cursor : pointer;"><br>
+        <label>Gender:</label><br>
+        Male<input type="radio" name="gender" value="male">
+        Female<input type="radio" name="gender" value="Female">
+        Other<input type="radio" name="gender" value="Other">
+        <br>
+
+
+      
+        <tr>
+
+            <td>Qualification:</td><br>
+          
+            <td><select Name="qualification" style="height:24px;width:12%;
+              text-align: center;border-color:blueviolet;cursor : pointer;">
+          
+            <option value="-1" selected>select..</option>
+          
+            <option value="UG">UG</option>
+          
+            <option value="pg">PG</option>
+          
+            <option value="btch">BTECH</option>
+          
+            <option value="diploma">Dipoloma</option>
+          
+            </select></td>
+          
+            </tr><br><br>
+          
+
+        
+        
+            <button type="submit" style="height:35px;width:10%;
+            text-align: center;border-color:brown;cursor : pointer;">Submit </button>
+    
+   
+    </form>
+    </center>
+
+    
+
+</body>
+</html>
